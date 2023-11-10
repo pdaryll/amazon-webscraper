@@ -1,0 +1,208 @@
+body {
+    text-align: center;
+    background-color: #fdf1ec;
+}
+
+h1 {
+    font-family: 'Arial Narrow', Arial, sans-serif;
+    margin-top: 30px;
+    color: #515151;
+    text-transform: uppercase;
+    font-weight: 900;
+}
+
+.search-container {
+    margin: 20px auto;
+}
+
+input {
+    border: none;
+    outline: none;
+    padding: 11px;
+    border-radius: 30px 8px 8px 30px;
+    text-align: center;
+    outline-color: #8d8d8d;
+    box-shadow: 0px 14px 15px 0px rgba(109, 106, 106, 0.9);
+}
+
+.button {
+    position: relative;
+    outline-color: #101010;
+    box-shadow: 0px 14px 15px 0px rgba(109, 106, 106, 0.9);
+    height: 39px;
+    padding: 11px 20px;
+    background-color: #9cebd5;
+    color: #121111;
+    border: none;
+    cursor: pointer;
+    border-radius: 8px 30px 30px 8px;
+}
+
+.button__text {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 14px;
+    color: #101010;
+    transition: all 0.2s;
+}
+
+.button--loading .button__text {
+    visibility: hidden;
+    opacity: 0;
+}
+
+.button--loading::after {
+    content: "";
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    border: 4px solid transparent;
+    border-top-color: #717171;
+    border-radius: 50%;
+    animation: button-loading-spinner 1s ease infinite;
+}
+
+@keyframes button-loading-spinner {
+    from {
+        transform: rotate(0turn);
+    }
+
+    to {
+        transform: rotate(1turn);
+    }
+}
+
+button:hover {
+    background-color: #6dc1a9;
+}
+
+#results-container {
+    margin-top: 20px;
+}
+
+.wrapper {
+    height: 420px;
+    width: 654px;
+    margin: 50px auto;
+    border-radius: 30px 30px 30px 30px;
+    box-shadow: 0 7px 15px 0 rgba(0, 0, 0, 0.576),0 7px 15px 0 rgba(0, 0, 0, 0.691);
+    transition: all 0.3s;
+
+    &:hover { 
+        box-shadow: 0 13px 27px 0 rgba(0, 0, 0, 0.45),0 13px 27px 0 rgba(0, 0, 0, 0.469);}
+}
+
+.product-img {
+    float: left;
+    height: 420px;
+    width: 327px;
+}
+
+.product-img img {
+    border-radius: 30px 0 0 30px;
+    object-fit:contain;
+    background-color: white;
+}
+
+.product-info {
+    float: left;
+    height: 420px;
+    width: 327px;
+    border-radius: 0 30px 30px 0px;
+    background-color: rgb(162, 178, 194);
+}
+
+.product-text {
+    height: 300px;
+    width: 327px;
+}
+
+.product-text h1 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;;
+    margin: 0 0 0 38px;
+    padding-top: 52px;
+    padding-right: 20px;
+    font-size: 21px;
+    text-align: left;
+    color: #424242;
+}
+
+.product-text h1,
+.product-price-btn p {
+    font-family: 'Trebuchet MS', sans-serif;
+}
+
+.product-text h2 {
+    margin: 0 0 47px 38px;
+    padding-top: 30px;
+    text-align: left;
+    font-size: 15px;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 400;
+    text-transform: uppercase;
+    color: #ffffff;
+    letter-spacing: 0.2em;
+}
+
+.product-text p {
+    height: 125px;
+    margin: 0 0 0 38px;
+    font-family: 'Playfair Display', serif;
+    color: #8d8d8d;
+    line-height: 1.7em;
+    font-size: 15px;
+    font-weight: lighter;
+    overflow: hidden;
+}
+
+.product-price-btn {
+    height: 103px;
+    width: 327px;
+    margin-top: 17px;
+    position: relative;
+}
+
+.product-price-btn p {
+    display: inline-block;
+    position: absolute;
+    top: -13px;
+    height: 50px;
+    font-family: 'Trocchi', serif;
+    margin: 0 0 0 38px;
+    font-size: 28px;
+    font-weight: lighter;
+    color: #474747;
+}
+
+span {
+    display: inline-block;
+    height: 50px;
+    font-family: 'Suranna', serif;
+    font-size: 34px;
+}
+
+.product-price-btn button {
+    float: left;
+    height: 50px;
+    width: 176px;
+    margin: 0 40px 0 36px;
+    box-sizing: border-box;
+    border: transparent;
+    border-radius: 60px;
+    font-family: 'Raleway', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: #111010;
+    background-color: #9cebd5;
+    outline: none;
+}
