@@ -4,8 +4,10 @@ const {fetchAmazonSearchResults, extractProductDetails} = require('./scraper');
 const app = express();
 const port = 3000;
 
-// Added "Access Control Allow Origin" headers. Failing to do so
-// will result in an error when requesting our api endpoint.
+// Fetching the endpoint from the script.js results in it being 
+// blocked by the cors policy so we must add "Access Control Allow Origin" 
+// in the headers.But sometimes running the code without this is perfectly
+// fine for some reason. 
 app.use((req, res, next) => {
     res.setHeader("Access-Control-Allow-Origin", "*");
     res.header(
