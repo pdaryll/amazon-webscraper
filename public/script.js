@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const resultsContainer = document.getElementById('results-container');
     
     // Listens for when Enter key is pressed in the input element then
-    // simulates the button click to call the api.
+    // simulates the button click to call the API.
     keywordInput.addEventListener("keypress", (event) =>{
         if (event.key === "Enter"){
             event.preventDefault();
@@ -12,11 +12,16 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     })
 
-    // Calls the api endpoint from the backend which a keyword is required.
+    // Calls the API endpoint from the backend which a keyword is required.
     searchButton.addEventListener('click', () => {
         const keyword = keywordInput.value;
 
         if (keyword) {
+
+            // Adds a class to the Search button element which makes it display
+            // the loading animation whenever an API call is initiated.
+            searchButton.classList.add("button--loading");
+
             fetch(`http://localhost:3000/api/scrape?keyword=${encodeURIComponent(keyword)}`)
                 .then(response => response.json())
                 .then(data => displayResults(data))
@@ -54,5 +59,9 @@ document.addEventListener('DOMContentLoaded', () => {
         } else {
           resultsContainer.innerHTML = '<p>No results found.</p>';
         }
+
+        // Removes the class that displays the loading animation button
+        // after the result is displayed.
+        searchButton.classList.remove("button--loading");
     }
 });
