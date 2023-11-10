@@ -4,6 +4,7 @@
   "description": "Basic webscraper for amazon",
   "main": "index.js",
   "scripts": {
+    "build": "node app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
