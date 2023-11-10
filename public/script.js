@@ -3,6 +3,15 @@ document.addEventListener('DOMContentLoaded', () => {
     const keywordInput = document.getElementById('keyword');
     const resultsContainer = document.getElementById('results-container');
     
+    // Listens for when Enter key is pressed in the input element then
+    // simulates the button click to call the api.
+    keywordInput.addEventListener("keypress", (event) =>{
+        if (event.key === "Enter"){
+            event.preventDefault();
+            searchButton.click();
+        }
+    })
+
     // Calls the api endpoint from the backend which a keyword is required.
     searchButton.addEventListener('click', () => {
         const keyword = keywordInput.value;
